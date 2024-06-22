@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./pages/home/Home";
+import PersonCard from "./components/PersonCard";
+import { estudiantes } from "./utils/dataPerson";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home class="home">
+        {estudiantes.map((unEstudiantes) => (
+          <PersonCard person={unEstudiantes} />
+        ))}
+        {/* <PersonCard
+          firstName="Doe"
+          lastName="Jane"
+          age={45}
+          hairColor="Black"
+        />
+        <PersonCard
+          firstName="Smith"
+          lastName="John"
+          age={88}
+          hairColor="Brown"
+        />
+        <PersonCard 
+        firstName="Fillmore"
+        lastName="Millard"
+        age={50}
+        hairColor="Brown"
+        />
+        <PersonCard
+        firstName="Smith"
+        lastName="Maria"
+        age={62}
+        hairColor="Brown"
+        /> */}
+      </Home>
     </div>
   );
 }
